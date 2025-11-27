@@ -1,8 +1,6 @@
 package com.company.productservice.controllers;
 
 import com.company.productservice.models.Product;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -37,8 +35,8 @@ public class ProductController {
 
     //localhost:8081/products/delete
     @DeleteMapping({"/{id}"})
-    public void deleteProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
-
+    public String deleteProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
+        return "Product Deleted Successfully";
     }
 
 }
