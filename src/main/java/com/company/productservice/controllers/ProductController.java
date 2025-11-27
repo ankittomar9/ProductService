@@ -29,6 +29,16 @@ public class ProductController {
         return product;
     }
 
+    //localhost:8081/products/update
+    @PutMapping()
+    public Product updateProduct(@RequestBody Product product){
+        return product;
+    }
 
+    //localhost:8081/products/delete
+    @DeleteMapping()
+    public void deleteProduct(@RequestBody Product product){
+
+    }
 
 }
