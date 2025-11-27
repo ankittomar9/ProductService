@@ -36,8 +36,8 @@ public class ProductController {
     }
 
     //localhost:8081/products/delete
-    @DeleteMapping()
-    public void deleteProduct(@RequestBody Product product){
+    @DeleteMapping({"/{id}"})
+    public void deleteProduct(@PathVariable ("id")@RequestBody Product product){
 
     }
 
