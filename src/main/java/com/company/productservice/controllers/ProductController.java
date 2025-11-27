@@ -30,14 +30,14 @@ public class ProductController {
     }
 
     //localhost:8081/products/update
-    @PutMapping()
-    public Product updateProduct(@RequestBody Product product){
+    @PutMapping({"/{id}"})
+    public Product updateProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
         return product;
     }
 
     //localhost:8081/products/delete
     @DeleteMapping({"/{id}"})
-    public void deleteProduct(@PathVariable ("id")@RequestBody Product product){
+    public void deleteProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
 
     }
 
