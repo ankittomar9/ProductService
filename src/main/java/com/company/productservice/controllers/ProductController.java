@@ -3,26 +3,32 @@ package com.company.productservice.controllers;
 import com.company.productservice.models.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+//localhost:8081/products
 @RequestMapping("/products")
 public class ProductController {
 
+    //localhost:8081/products/1
     @GetMapping("/{productId}")
     public Product getSingleProduct(@PathVariable  ( "productId") Long productId){
         return null;
     }
-
-    @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts() {
-        return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.OK);
+    //localhost:8081/products
+    @GetMapping()
+    public List<Product> getAllProducts(){
+        return new ArrayList<>();
     }
+    //localhost:8081/products/create
+    @PostMapping()
+    public Product createProduct(@RequestBody Product product){
+        return product;
+    }
+
 
 
 }
