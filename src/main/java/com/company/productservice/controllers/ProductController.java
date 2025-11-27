@@ -1,8 +1,6 @@
 package com.company.productservice.controllers;
 
 import com.company.productservice.models.Product;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -30,15 +28,15 @@ public class ProductController {
     }
 
     //localhost:8081/products/update
-    @PutMapping()
-    public Product updateProduct(@RequestBody Product product){
+    @PutMapping({"/{id}"})
+    public Product updateProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
         return product;
     }
 
     //localhost:8081/products/delete
-    @DeleteMapping()
-    public void deleteProduct(@RequestBody Product product){
-
+    @DeleteMapping({"/{id}"})
+    public String deleteProduct(@PathVariable ("id") Long productId, @RequestBody Product product){
+        return "Product Deleted Successfully";
     }
 
 }
